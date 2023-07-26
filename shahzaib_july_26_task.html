@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shahzaib</title>
+  </head>
+  <body>
+    <script>
+      console.log('============ Q No 1 ==============')
+      //1.Write a function that takes an array of numbers as input and returns the highest sum that can be obtained by summing any combination of numbers in the array, without using consecutive numbers.
+      let highestCombinationSum = (array)=>{
+            array.sort((a, b) => b - a);;
+            const sum = array[0] + array[1] ;
+            return sum;
+        }
+      console.log(highestCombinationSum([1,3,5,7,9,2,6,4,8,10]));
+
+      console.log('============ Q No 2 ==============')
+      //2. Implement a function that determines if a given string of parentheses is balanced. The function should return true if the parentheses are balanced, and false otherwise. For example, "((()))" is balanced, while "(()" is not.
+      let findParenthesesBalance = (string) => {
+        let arrayOfString = string.split("");
+        let leftparanthesesArray = [];
+        let rightparantheseArray = [];
+        for (const i of arrayOfString) {
+          if (i.match(/[(]/g)) {
+            leftparanthesesArray.push(i);
+          } else if (i.match(/[)]/g)) {
+            rightparantheseArray.push(i);
+          }
+        }
+
+        if (leftparanthesesArray.length === rightparantheseArray.length) {
+          return true;
+        } else {
+          return false;
+        }
+      };
+      console.log(findParenthesesBalance("((((  )))"));
+
+
+      console.log('============ Q No 3 ==============')
+      //3. Write a function that takes an array of integers as input and returns the longest increasing subarray within the array. An increasing subarray is a sequence of consecutive numbers that are in ascending order.
+      let longestSubArray =(arrays)=>{
+            let longestArray = [];
+            for(let i in arrays){
+                let array = arrays[i];
+                if(array.length > longestArray.length){
+                    longestArray = array;
+                }
+            }
+            return longestArray.sort();
+        }
+        console.log(longestSubArray( [ [1, 6, 5, 4, 3], [1, 2, 6, 4, 8, 0], [3, 6, 1, 2], [3, 4, 1] ]));
+      
+      console.log('============ Q No 4 ==============')
+      //4. Implement a function that finds the first non-repeated character in a given string. The function should return the character. If no non-repeated character is found, return null.
+      let findFirstNonRepeatedChar = (str) => {
+        let charCount = {};
+
+        for (let char of str) {
+          if (char in charCount) {
+            charCount[char]++;
+          } else {
+            charCount[char] = 1;
+          }
+        }
+
+        for (let char of str) {
+          if (charCount[char] === 1) {
+            return char;
+          }
+        }
+
+        return null;
+      };
+      console.log(findFirstNonRepeatedChar("abacabad"));
+
+      console.log('============ Q No 5 ==============')
+      //5. Create a function that generates a random password of a given length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+      const randomGenerator = (length) => {
+      const allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?";
+      let password = Array.from({ length }, () => allChars[Math.floor(Math.random() * allChars.length)]).join('');
+      return password;
+      }
+
+      console.log(randomGenerator(8));
+
+      console.log('============ Q No 6 ==============')
+      //6. Write a function that determines the number of occurrences of a specific word in a given text. The function should not be case-sensitive and should count the occurrences even if the word appears as part of another word.
+
+      let countWord=(sentence, word)=>{
+            const occurrences = sentence.match(RegExp('\\b' + word + '\\b', 'gi'));
+            return occurrences;
+        }
+        const sentence = "The sun sets behind the mountains, painting the sky with hues of orange and pink.";
+        const word = "the";
+        console.log(countWord(sentence, word));  
+      
+      console.log('============ Q No 7 ==============')
+      //7. Implement a function that takes an array of integers as input and returns a new array containing only the elements that appear an odd number of times.
+      let arrayWithOddTimes = (array)=>{
+        let OddTimes = [];
+        let countElement = {};
+        for (const num of array) {
+          if (num in countElement) {
+            countElement[num]++;
+          }else{
+            countElement[num] = 1;
+          }
+        }
+
+        for (let num of array) {
+          if(countElement[num]%2!==0){
+            OddTimes.push(num);
+          }
+        }
+        return OddTimes;
+      }
+      console.log(arrayWithOddTimes([1,2,3,1,2,4,5]));
+
+      console.log('============ Q No 8 ==============')
+      //8. Create a function that generates a unique identifier string with a given length. The identifier should consist of random alphanumeric characters.
+      let uniqueId = (len) =>{
+        const allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let ID = ""
+        for (let i=0; i<len; i++) {
+          ID += allChars[~~(Math.random() * allChars.length)];
+        }
+        return ID;
+      }
+      console.log(uniqueId(50));
+
+      console.log('============ Q No 9 ==============')
+      //9. Write a function that takes an array of integers as input and returns the second largest number in the array. If there is no second largest number, return null.
+      let secondLargestNum = (array) =>{
+        if (array.length === 1) {
+          return null;
+        }else{
+          let sortedArray = array.sort((a,b)=>b-a)
+          return sortedArray[1];
+        }
+      }
+      console.log(secondLargestNum([1,2,3,4,5]));
+
+      console.log('============ Q No 10 ==============')
+      //10. Implement a function that converts a decimal number into its binary representation as a string.
+      let convertDecimaltoBinary = (num)=>{
+        return num.toString(2);
+      }
+      console.log(convertDecimaltoBinary(12))
+    </script>
+  </body>
+</html>
