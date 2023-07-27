@@ -19,24 +19,12 @@
       console.log('============ Q No 2 ==============')
       //2. Implement a function that determines if a given string of parentheses is balanced. The function should return true if the parentheses are balanced, and false otherwise. For example, "((()))" is balanced, while "(()" is not.
       let findParenthesesBalance = (string) => {
-        let arrayOfString = string.split("");
-        let leftparanthesesArray = [];
-        let rightparantheseArray = [];
-        for (const i of arrayOfString) {
-          if (i.match(/[(]/g)) {
-            leftparanthesesArray.push(i);
-          } else if (i.match(/[)]/g)) {
-            rightparantheseArray.push(i);
-          }
+        if (string[0] === "(" && string[string.length - 1] === ")") {
+          return string.split("(").length -1 === string.split(")").length - 1
         }
-
-        if (leftparanthesesArray.length === rightparantheseArray.length) {
-          return true;
-        } else {
-          return false;
-        }
+        return false
       };
-      console.log(findParenthesesBalance("((((  )))"));
+      console.log(findParenthesesBalance("(())()()))"));
 
 
       console.log('============ Q No 3 ==============')
