@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "Alice",
+        age: 25,
+        occupation: "Engineer",
+      };
+      person.occupation = "Software Engineer";
+      person.city = "New York";
+      console.log(person);
+
+      //Q No.1
+      student = {
+        name: "Shahzaib",
+        age: "20",
+        major: "Front-end Engineer",
+      };
+
+      //Q No.2
+      student = {
+        name: "Shahzaib",
+        age: "20",
+        major: "Front-end Engineer",
+        greet: function () {
+          return "Hello" + this.name;
+        },
+      };
+
+      //Q No.3
+      let printProperties = (obj) => {
+        for (const property in obj) {
+          console.log(`Property: ${property}, Value: ${obj[property]}`)
+        }
+      };
+
+      //Q No.4
+      const book = {
+        title: "The Lord of the Rings",
+        author: "J.R.R. Tolkien",
+        year: 1954,
+        genre: "Fantasy",
+      };
+      let checkProperty =(obj, property) =>{
+       return obj.hasOwnProperty(property);
+      }
+
+      //Q No.5
+      let fruits = ["mango","apple","banana"];
+
+      //Q No.6
+      let reverseArray = (arr) =>{
+         return arr.reverse();
+      }
+
+      //Q No.7
+      const numbers = [10, 5, 8, 3, 9];
+      let sumArray = (arr)=>{
+        let sum = 0;
+        for (const i of arr) {
+          sum +=i;
+        }
+        return sum;
+      }
+
+      //Q No.8
+      let filterEvenNumbers = (arr) =>{
+        return arr.filter(ar=>ar%2===0);
+      }
+
+      //Q No.9
+      let persons = {
+        name: "Shahzaib",
+        age: 20
+      }
+      let clonePerson = {...persons};
+
+      //Q No.10
+      let getAverage = (arr) => {
+        let sum = 0;
+        for(let i of arr){
+          sum +=i;
+        }
+        return sum/arr.length;
+      }
+    </script>
+  </body>
+</html>
