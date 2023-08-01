@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shahzaib</title>
+  </head>
+  <body>
+    <script>
+      //Question 1
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+      }
+      class Student extends Person {
+        constructor(name, age, major) {
+          super(name, age);
+          this.major = major;
+        }
+        getInfo() {
+          return `${this.name},${this.age},${this.major} `;
+        }
+      }
+      let student1 = new Student("Shahzaib", 20, 2);
+
+      console.log(student1.getInfo());
+
+      //Question 2
+      const people = [
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 20 },
+        { name: "Charlie", age: 30 },
+      ];
+      people.sort((a, b) => a.age - b.age);
+      console.log(people);
+
+      //Question 3
+      const book = {
+        title: "The Lord of the Rings",
+        author: {
+          name: "J.R.R. Tolkien",
+          birthYear: 1892,
+        },
+        year: 1954,
+        genre: "Fantasy",
+      };
+      let getAuthorInfo = (book) => {
+        console.log(
+          `${book.title}, ${book.author.name}, ${book.author.birthYear}`
+        );
+      };
+      getAuthorInfo(book);
+
+      //Question 4
+      const numbers = [1, 2, 3, 4, 5];
+      let doubleOddNum = numbers
+        .filter((number) => number % 2 !== 0)
+        .map((number) => number * number);
+      let result = 0;
+      for (const i of doubleOddNum) {
+        result += i;
+      }
+      console.log(result);
+
+      //Question 7
+      let capitalizeFirstLetter = (str) => {
+        let arrayOfStr = str.split(" ");
+        for (let i = 0; i < arrayOfStr.length; i++) {
+          arrayOfStr[i] =
+            arrayOfStr[i][0].toUpperCase() + arrayOfStr[i].substring(1);
+        }
+        console.log(arrayOfStr);
+      };
+      capitalizeFirstLetter("hwllo shahzaib");
+
+      //Question 8
+      const prices = [10, 20, 30, 40, 50];
+      let updatedPrice = [];
+      for (const i of prices) {
+        updatedPrice.push(i - (i / 100) * 10);
+      }
+      let sum = 0;
+      for (const i of updatedPrice) {
+        sum += i;
+      }
+      console.log(sum + (sum / 100) * 5);
+
+      //Question 9
+      function executeCallback(callback) {
+        callback("Callback executed!");
+      }
+      function callbackFunction(message) {
+        console.log(message);
+      }
+      executeCallback(callbackFunction);
+
+      //Question 10
+      const peoples = [
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 20 },
+        { name: "Charlie", age: 25 },
+        { name: "David", age: 20 },
+        { name: "Eva", age: 30 },
+      ];
+
+      function groupPeopleByAge(arr) {
+        const grouped = {};
+
+        for (const person of arr) {
+          const { age } = person;
+
+          if (grouped.hasOwnProperty(age)) {
+            grouped[age].push(person);
+          } else {
+            grouped[age] = [person];
+          }
+        }
+
+        return grouped;
+      }
+
+      const groupedPeople = groupPeopleByAge(peoples);
+      console.log(groupedPeople);
+    </script>
+  </body>
+</html>
