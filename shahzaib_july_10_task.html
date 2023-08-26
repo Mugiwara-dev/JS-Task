@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzaib</title>
+</head>
+<body>
+    <script>
+        //'============ Q No 01 =============='
+        //Write a function that takes a string as input and removes all whitespace characters (spaces, tabs, newlines) from the string.
+        let removeSpaces = (str)=>{
+            let newStr = str.split("");
+            for (const i of newStr) {
+                if (i!="") {
+                    newStr.push(i);
+                }
+            }
+            return newStr
+        }
+        console.log(removeSpaces("Hello Shahzaib it's me"))
+    </script>
+</body>
+</html>

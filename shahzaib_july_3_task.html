@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzaib</title>
+</head>
+
+<body>
+    <script>
+        //Write a function that takes an array of numbers as input and returns the sum of all the numbers.
+        let sumOfArray = (arr) => {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+        // console.log(sumOfArray([1,2,3]));
+
+        //Using a for of loop, iterate over an array and print the elements.
+        let iterateUsingLoop = () => {
+            array = [1, 2, 3];
+            for (const i of array) {
+                console.log(i);
+            }
+        }
+        // iterateUsingLoop();
+
+        //Using a for of loop, concatenate all the strings in an array into a single string.
+        let concatenationOfString = () => {
+            array = ["Hello ", "my ", "name ", "is ", "shahzaib"];
+            let result = "";
+            for (const i of array) {
+                result += i;
+            }
+            return result;
+        }
+        // console.log(concatenationOfString());
+
+        //Write a function that takes a string as input and checks if it is a palindrome (reads the same forwards and backwards).
+        let checkPalindrome = (str) => {
+            let reverseStr = str.split("").reverse().join("")
+            return reverseStr === str
+        }
+        let palindrome = "madam"
+        // console.log(checkPalindrome(palindrome))
+
+        //Write a function that takes an array of numbers as input and returns the median value (the middle value when the array is sorted).
+        let medianValue = (array) => {
+            let sortedArray = array.sort();
+            let middleValue = Math.floor(sortedArray.length / 2)
+            let median = 0;
+            if (sortedArray.length % 2 === 0) {
+                return median = (sortedArray[middleValue - 1] + sortedArray[middleValue]) / 2;
+            }
+            else {
+                return sortedArray[middleValue];
+            }
+        }
+        array = [1, 2, 3, 4, 5];
+        // console.log(medianValue(array));
+
+        //Write a function that takes a sentence as input and capitalize the first letter of each word.
+        let capitalizeFirstWord = (mySentence) => {
+            const words = mySentence.split(" ");
+
+            for (let i = 0; i < words.length; i++) {
+                words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+            }
+
+            let capSentence = words.join(" ");
+
+            return capSentence;
+        }
+        const mySentence = "my name is shahzaib";
+        // console.log(capitalizeFirstWord(mySentence));
+
+        //Write a function that takes two arrays as input and returns a new array with the elements that are unique to each array (not present in both).
+        let findUniqueElements = (array1, array2) => {
+            const uniqueElements = [];
+
+            for (let i = 0; i < array1.length; i++) {
+                if (!array2.includes(array1[i]) && !uniqueElements.includes(array1[i])) {
+                    uniqueElements.push(array1[i]);
+                }
+            }
+
+            for (let i = 0; i < array2.length; i++) {
+                if (!array1.includes(array2[i]) && !uniqueElements.includes(array2[i])) {
+                    uniqueElements.push(array2[i]);
+                }
+            }
+
+            return uniqueElements;
+        }
+        const array1 = [1, 2, 3, 4, 5];
+        const array2 = [3, 4, 5, 6, 7];
+        // console.log(findUniqueElements(array1, array2));
+
+
+        //Write a function that takes a number as input and prints a countdown from that number to 1, with a 1-second delay between each countdown.
+        const sleep = (ms = 2000) => {
+            return new Promise(r => {
+                setTimeout(r, ms)
+            })
+        }
+        const delayedCount = async (num) => {
+            step = num > 0 ? -1 : 1
+            while (num != 1) {
+                await sleep()
+                console.log(num)
+                num += step
+            }
+            console.log(num)
+        }
+        delayedCount(10)
+
+        //Write a function that takes an array of numbers as input and returns the sum of square of all the numbers.
+        let sumOfSquare =(numbers)=> {
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i] ** 2;
+            }
+            return sum;
+        }
+        let numbers = [2,4,6,8]
+        // console.log(sumOfSquare(numbers));
+
+        //Write a function that takes an array of strings as input and returns the concatenated string of all the elements.
+        let stringConcatination = (array) => {
+            let result = "";
+            for (const i of array) {
+                result += i;
+            }
+            return result;
+        }
+        array = ["Hello ", "my ", "name ", "is ", "shahzaib"];
+        // console.log(stringConcatination(array));
+    </script>
+</body>
+
+</html>

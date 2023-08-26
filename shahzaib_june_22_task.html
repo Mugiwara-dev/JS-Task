@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Write a function that will generate a random number and if the number is 5 then you should display the error message not a valid number and if the number is valid then you need to pass the number
+in the second function and the second function will check if it is even or odd and if the number is even then you should return the message Number is Even and if the number is odd then you should return the message Number is odd. We have to do this program with Promise.
+here is the algorithm how you will make this program
+1-  create a function with the name getNumber and generate the random number using random built-in function
+2-  If the random generated number is up to 5 then the number should be passed in resolve and if the random generated number is less than 5 then it should be passed in reject.
+3-  create a second function with then name checkEvenOdd and pass the number parameter.
+4-  If number is Even you should return Number is Even, if number is odd you should return Number is Odd
+5-  create a third function with the name errorWithGetNumber and pass the parameter reason and throw the error like throw reason
+6-  pass the first function in the promise like new Promise(getNumber)
+7-  In the then method you should pass the second and third function like .then(checkEvenOdd, errorWithGetNumber)
+8-  In the then method you should get the value like Number is Even
+9-  In the catch method you should console the errors we have thrown in the first function and the third function. (edited)  */
+        function getNumber() {
+            
+            const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+            return new Promise((resolve, reject) => {
+                if (randomNumber <= 5) {
+                    resolve(randomNumber);
+                } else {
+                    reject("Not a valid number");
+                }
+            });
+        }
+
+        function checkEvenOdd(number) {
+            if (number % 2 === 0) {
+                return "Number is Even";
+            } else {
+                return "Number is odd";
+            }
+        }
+
+        function errorWithGetNumber(reason) {
+            throw reason;
+        }
+
+        new Promise(getNumber).then(
+            (number) => {
+                console.log(checkEvenOdd(number)); 
+            },
+        ).catch(
+            (reason) => {
+                console.error(errorWithGetNumber(reason)); 
+            }
+        );
+    </script>
+</body>
+
+</html>

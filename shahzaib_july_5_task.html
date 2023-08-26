@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzaib</title>
+</head>
+
+<body>
+    <script>
+        /*Questions no: 1
+        --------------------------------------------
+        Let’s say, A = “ca” and B = “ab”, S can be equal to: “ca”, “cb”, “aa” or “ab”. String “aa” has only one distinct letter (‘a’), so the answer is 1 (which is minimal among those strings).
+        Write a function that accepts two strings and returns the minimum number of distinct letters of a string S, that can be constructed from A and B as described above.*/
+        function countDistinctLetters(A, B) {
+            let count = 0;
+            const splitA = A.split('');
+            const splitB = B.split('');
+
+            for (let i = 0; i < splitA.length; i++) {
+                for (let j = 0; j < splitB.length; j++) {
+                    if (splitA[i] === splitB[j]) {
+                        count++;
+                        break;
+                    }
+                }
+            }
+
+            return count;
+        }
+        const A = "ca";
+        const B = "ab";
+        const result = countDistinctLetters(A, B);
+        console.log(result);
+
+        /*Question no: 2
+        --------------------------------------------*/
+        STUDENTS = [
+            {
+                name: 'John',
+                validityDate: '2030-12-30'
+            },
+            {
+                name: 'Jane',
+                validityDate: '2030-05-25'
+            },
+            {
+                name: 'Adam',
+                validityDate: '2030-11-11'
+            },
+            {
+                name: 'Bonnie',
+                validityDate: '2008-11-11'
+            },
+            {
+                name: 'Dhilip',
+                validityDate: '2030-12-30'
+            },
+            {
+                name: 'Falude',
+                validityDate: '2020-05-25'
+            },
+            {
+                name: 'Damiyen',
+                validityDate: '2030-11-11'
+            },
+            {
+                name: 'Talisk',
+                validityDate: '2023-11-11'
+            }
+        ];
+
+        let checkValidity = (studentName, joiningDate, validityDate)=>{
+            
+        }
+
+    </script>
+</body>
+
+</html>

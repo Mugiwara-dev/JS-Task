@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //'============ Q No 01 =============='
+        //Given an array of strings, create a new array that only contains strings that start with the letter "A".
+        let arrayWithA = (array) => {
+            let newArray = [];
+            return newArray = array.filter(arr => arr[0] === "A")
+        }
+        // console.log(arrayWithA(["Ali","Hamza","Shahzaib","Arbaz"]));
+
+        //'============ Q No 02 =============='
+        //Given an array of objects representing products with properties such as name and price, create a new array that only contains products with a price lower than a specific value.
+        products = [
+            {
+                name: "Soap",
+                price: 100
+            },
+            {
+                name: "Shampoo",
+                price: 500
+            },
+            {
+                name: "Brush",
+                price: 150
+            }
+        ]
+        let filterProducts = (products, specificPrice) => {
+            let newArray = [];
+            return newArray = products.filter(product => product.price < specificPrice)
+        }
+        // console.log(filterProducts(products,200));
+
+        //'============ Q No 03 =============='
+        //Write a function that takes two numbers as input and returns their sum.
+        let sumFun = (num1, num2) => {
+            return num1 + num2
+        }
+        // console.log(sumFun(2,4))
+
+        //'============ Q No 04 =============='
+        //Write a function that takes an array of numbers as input and returns the average of those numbers.
+        let averageOfArray = (arr) => {
+            let sum = 0;
+            for (let i of arr) {
+                sum += i
+            }
+            return sum / arr.length;
+        }
+        // console.log(averageOfArray([1,2,3]))
+
+        //'============ Q No 05 =============='
+        //Given an array of objects representing cars with properties such as make and year, create a new array that only contains cars made before a specific year.
+        cars = [
+            {
+                name: "Civic",
+                year: 2023
+            },
+            {
+                name: "Crolla",
+                year: 2022
+            },
+            {
+                name: "Alto",
+                year: 2017
+            }
+        ]
+        let filterCars = (cars, specificYear) => {
+            let newArray = [];
+            return newArray = cars.filter(car => car.year <= specificYear);
+        }
+        // console.log(filterCars(cars, 2022));
+
+        //'============ Q No 06 =============='
+        //Given an array of strings, create a new array that only contains strings in all uppercase.
+        let filterUppercaseStrings = (arr) => {
+            return arr.filter(str => str === str.toUpperCase());
+        }
+        // console.log(filterUppercaseStrings(["HELLO", "my", "name", "is", "SHAHZAIB"]))
+
+        //'============ Q No 07 =============='
+        //Given an array of numbers, create a new array that only contains numbers that are multiples of 3.
+        let multiplesOfThree = (NumOfArray) => {
+            let newArray = [];
+            return newArray = NumOfArray.filter(Num => Num % 3 === 0);
+        }
+        // console.log(multiplesOfThree([1,2,3,6,9]));
+
+        //'============ Q No 08 =============='
+        //Write a function that takes a string as input and returns the length of the string.
+        let lengthOfStr = (str) => {
+            return str.length;
+        }
+        // console.log(lengthOfStr("Hello! My name is Shahzaib"));
+
+        //'============ Q No 09 =============='
+        //Write a function that takes a string as input and returns the string in reverse order.
+        let reverseStr = (string) => {
+            return string.split("").reverse().join("");
+        }
+        // console.log(reverseStr("Madam"));
+
+        //'============ Q No 10 =============='
+        //Write a function that takes a string as input and returns the string with all the vowels removed.
+        let removedVowels = (str) => {
+            const vowels = 'aeiouAEIOU';
+            let result = "";
+            for (let i in str) {
+                if (!vowels.includes(str[i])) {
+                    result += str[i]
+                }
+            }
+            return result;
+        }
+        // console.log(removedVowels("hello shahzaib"));
+
+        //'============ Q No 11 =============='
+        //Write a function that takes a string as input and returns the number of words in the string. Assume that words are separated by spaces.
+        let numOfWords = (str) => {
+            let space = " ";
+            let result = ""
+            for (let i in str) {
+                if (!space.includes(str[i])) {
+                    result += str[i];
+                }
+            }
+            return result.length
+        }
+        // console.log(numOfWords("Hi! It's me"));
+
+        //'============ Q No 01(B) =============='
+        //Write a function that takes a string as input and capitalizes the first letter of each word. Assume that words are separated by spaces.
+        let capitalizesFirstLetter = (str) => {
+            let words = str.split(" ");
+            for (let i in words) {
+                words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+            }
+            return words.join(" ");
+        }
+        // console.log(capitalizesFirstLetter("hello my name is shahzaib"));
+
+
+        //'============ Q No 03(C) =============='
+        //What is the purpose of try and catch in Javascript?
+        /*try and catch in JavaScript are used for error handling.
+        The try block contains the code that might cause an error. 
+        If an error occurs, the code execution jumps to the catch block, which handles the error. 
+        It helps prevent program crashes and allows for graceful handling of unexpected errors.*/
+
+        const num_only = (str) => {
+            let s = str.split("")
+            for (let i in s) {
+                if (typeof i === typeof 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        // console.log(num_only("123"))
+
+    </script>
+</body>
+
+</html>

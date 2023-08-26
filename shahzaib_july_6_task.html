@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Create an object representing a car with properties such as make, model, and year. Print out a sentence that includes the car's make, model, and year.
+        car = {
+            make: "Honda",
+            model: "Civic",
+            year: "2023"
+        }
+        // console.log("car's "+car.make +" "+car.model+" "+car.year);
+
+        //Using a for loop, print the elements of an array in reverse order.
+        let reverseLoop = (array) => {
+            for (let i = array.length - 1; i >= 0; i--) {
+                console.log(array[i])
+            }
+        }
+        let array = [1, 2, 3]
+        // reverseLoop(array)
+
+        //Create an object representing a book with properties such as title, author, and number of pages. Write a function that takes a book object as input and prints out the book's title and author.
+        let printObj = (book) => {
+            console.log(book.title);
+            console.log(book.author)
+        }
+        book = {
+            title: "One Piece",
+            author: "Oda Sensei",
+            numOfPages: 20000
+        }
+        // printObj(book);
+
+        //Create an object representing a shopping cart with properties such as items (an array of items) and total (the total cost of the items). Write a function that adds an item to the shopping cart and updates the total cost.
+        shoppingCart = {
+            item: [],
+            totalCost: 0
+        }
+        let addItem = (newItem, cost) => {
+            shoppingCart.item.push({ name: newItem, price: cost });
+            shoppingCart.totalCost += cost;
+        }
+        // addItem("Book", 20);
+        // addItem("Pen", 10);
+        // console.log(shoppingCart.item);
+        // console.log(shoppingCart.totalCost)
+
+        //Create an object representing a bank account with properties such as account number and balance. Write functions to deposit and withdraw money from the account and print the current balance.
+        bankAccount = {
+            accountNum: "UZ123ABC00",
+            currentBalance: 1
+        }
+        let deposit = (accountNum, balance) => {
+            if (accountNum === bankAccount.accountNum) {
+                bankAccount.currentBalance += balance;
+            }
+            console.log(bankAccount.currentBalance);
+        }
+        let withdraw = (accountNum, balance) => {
+            if (accountNum === bankAccount.accountNum) {
+                bankAccount.currentBalance -= balance;
+            }
+            console.log(bankAccount.currentBalance);
+        }
+
+        // deposit("UZ123ABC00",20)
+        // withdraw("UZ123ABC00",20)
+
+        //Create an object representing a student with properties such as name, grade, and subjects (an array of subjects). Write a function that adds a subject to the student's list of subjects.
+        student = {
+            name: "Zohaib",
+            grade: "FSc",
+            subjects: []
+        }
+
+        let addSubject = (subName) => {
+            student.subjects.push({ Name: subName });
+        }
+        // addSubject("English");
+        // console.log(student.subjects);
+
+        //Create an object representing a restaurant with properties such as name, cuisine, and rating. Write a function that updates the rating of the restaurant based on user input.
+        resturent = {
+            name: "Bratie",
+            cuisine: "Beverages & Stake",
+            rating: 8.9
+        }
+        let updateRating = (rating) => {
+            if (rating < 10) {
+                resturent.rating = rating;
+            }
+        }
+        // updateRating(9.9);
+        // console.log(resturent.rating);
+
+        //Create an object representing a recipe with properties such as name, ingredients (an array of ingredients), and instructions. Write a function that prints out the ingredients of the recipe.
+        recipe = {
+            name: "Chicken Karahi",
+            ingredients: ["chicken", "Yougort", "spicies", "cooking oil"],
+            instruction: "I don't know how to cook karahi haha"
+        }
+        let printIngredients = () => {
+            console.log(recipe.ingredients);
+        }
+        // printIngredients();
+
+        //Create an object representing a computer with properties such as brand, processor, and price. Write a function that checks if the computer is within a given budget.
+        computer = {
+            brand: "hp",
+            processor: "Core i9",
+            price: 1000
+        }
+        let priceBudget = (budget) => {
+            if (budget >= computer.price) {
+                console.log("Computer is in Budget");
+            }
+            else {
+                console.log("Computer is not in budget")
+            }
+        }
+        // priceBudget(2000);
+
+        //Given an array of numbers, create a new array that only contains the even numbers.
+        let EvenArray = (array) => {
+            let newArray = [];
+            for (const i of array) {
+                if (i % 2 === 0) {
+                    newArray.push(i)
+                }
+            }
+            return newArray;
+        }
+        // console.log(EvenArray([1,2,3,4,5,6]))
+
+        //Given an array of strings, create a new array that only contains strings with more than 5 characters.
+        let arrayOfStr = (str) => {
+            let newArray = []
+            for (const i of str) {
+                if (i.length > 5) {
+                    newArray.push(i);
+                }
+            }
+            return newArray;
+        }
+        // console.log(arrayOfStr(["Hello", "My", "Name", "is", "Shahzaib"]));
+
+        //Given an array of objects representing students with properties such as name and grade, create a new array that only contains students with a grade higher than or equal to 90.
+        student = [
+            {
+                name: "Shahzaib",
+                grade: 100
+            },
+            {
+                name: "Zohaib",
+                grade: 90
+            },
+            {
+                name: "Zahid",
+                grade: 80
+            }
+        ]
+        let newArray = [];
+        student.forEach(student => {
+            if (student.grade >= 90) {
+                newArray.push(student);
+            }
+        });
+        // console.log(newArray);
+
+        //Given an array of objects representing books with properties such as title and author, create a new array that only contains books written by a specific author.
+        books = [
+            {
+                title:"One Piece",
+                author:"Oda Sensei"
+            },
+            {
+                title:"Naruto",
+                author:"Kishimoto Sensei"
+            },
+            {
+                title:"Boruto",
+                author:"Kishimoto Sensei"
+            }
+        ]
+        let specificAuthor = [];
+        books.forEach(books=>{
+            if (books.author==="Kishimoto Sensei") {
+                specificAuthor.push(books)
+            }
+        });
+        // console.log(specificAuthor);
+
+        //Given an array of numbers, create a new array that only contains numbers greater than 10.
+        let greaterThanTen = (aray)=>{
+            let newArray = [];
+            for (const i of aray) {
+                if (i>10) {
+                    newArray.push(i);
+                }
+            }
+            return newArray;
+        }
+        // console.log(greaterThanTen([9,10,1,11,12,2]));
+
+    </script>
+</body>
+
+</html>

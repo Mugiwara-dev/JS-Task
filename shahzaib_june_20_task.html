@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Practice exercises</h2>
+    <p id="paragraph"></p>
+
+    <input type="number" id="demo" placeholder="Check Prime Number">
+    <button onclick=alert(test_prime())>click here</button>
+
+    <input type="number" id="demo1" placeholder="Check Even or Not">
+    <button onclick=isEven()>click here</button>
+
+    <input type="number" id="demo2" placeholder="Check factorial">
+    <button onclick=findFactorial()>click here</button>
+
+    <input type="number" id="square" placeholder="Check Perfect Square">
+    <button onclick=isPerfectSquare()>click here</button>
+
+    <input type="text" id="num1" placeholder="Enter First Number">
+    <input type="text" id="num2" placeholder="Enter Second Number" required>
+    <button onclick=maxNum()>Send</button>
+
+    <script>
+        console.log('============ Q No 1 ==============')
+        /* What is Javascript and write down where it is used? */
+        /*  JavaScript is a high - level, dynamic, and interpreted programming language
+            that is used to make a website interactive and dynamic.It is primarily used
+            for web development, but it can also be used in non - web environments such
+            as server - side scripting and game development. JavaScript is commonly used
+            for adding interactivity to HTML pages, creating animations, validating user
+            input, manipulating the DOM, creating dynamic web content, and building web-based
+            applications like libraries and frameworks, client - side scripting for web applications.*/
+
+        console.log('============ Q No 2 ==============')
+        /* Let suppose you have a paragraph element having an id 'paragraph,' how can you replace its content with your name? */
+        let paragraph = document.getElementById("paragraph");
+        paragraph.innerHTML = "Shahzaib Aslam";
+
+        console.log('============ Q No 3 ==============')
+        /* How can we declare a variable and what are the different ways to declare? */
+        // In JavaScript, you can declare a variable using the var, let, or const keyword.
+        var x = 5;
+        let y = "hello";
+        const z = true;
+
+        console.log('============ Q No 4 ==============')
+        //What is the logical operator for "not equal value or not equal type" statement?
+        /*The logical operator for "not equal value or not equal type" statement 
+        is !== in JavaScript. It compares the values and types of the operands
+        returning true if they are not equal in either value or type
+        otherwise it returns false. 
+        For example, the expression 5 !== '5' is true.*/
+
+        console.log('============ Q No 5 ==============')
+        //Write down different data types used in programming languages.
+        /*1-Integer, 2-Boolean, 3-String, 4-Characters
+          5-Float, 6-Double, 7-Null*/
+
+        console.log('============ Q No 6 ==============')
+        //What is a function and its scope? Describe with an example.
+        /*A function in JavaScript is a block of code that performs a specific task
+        and it can be called or executed multiple times from different places in 
+        the code. The scope of a function determines the accessibility of variables 
+        inside and outside the function. Variables inside a function are only accessible 
+        within the function's scope.*/
+        const newFun = (name) => {
+            console.log("Hello it's me" + name)
+        }
+        newFun("Shahzaib");
+
+        console.log('============ Q No 7 ==============')
+        //What is an object and its writing style? What are the different ways to access object properties?
+        /*In JavaScript, an object is a collection of properties where each property
+        has a key and a value. The key and the value are separated by a colon, and 
+        each key-value pair is separated by a comma.*/
+        const person = {
+            name: "Shahzaib",
+            age: 20,
+            city: "Bahawalpur"
+        };
+        //We can access the properties of an object using dot notation or square bracket notation
+        console.log(person.name);
+        console.log(person['age']);
+
+        console.log('============ Q No 8 ==============')
+        //How to check how many letters are in a string?
+        const name = 'Shahzaib';
+        console.log(name.length)
+        //Using .length property we can check the length of string
+
+        console.log('============ Q No 9 ==============')
+        //What would be the result of 100 == '101' and 100 != '100'?          
+        /*The expression 100 == '101' will evaluate to false because the == operator
+        in JavaScript performs type coercion before making the comparison. 
+        In this case, the number 100 is being compared to the string '101'.
+
+        The expression 100 != '100' will evaluate to false because, as mentioned 
+        before, the != operator also performs type coercion. The string '100' can be
+        converted to the number 100, so the comparison between the number 100 and 
+        the string '100' will result in false.
+
+        In both cases, the comparisons result in false
+
+        Coercion, in the context of programming languages, refers to the automatic 
+        conversion or transformation of one data type to another data type.*/
+
+        console.log('============ Q No 10 ==============')
+
+        const str = 'hello world';
+
+        if (str.endsWith('world')) {
+            console.log('The string ends with "world"');
+        } else {
+            console.log('The string does not end with "world"');
+        }
+
+        console.log('============ Q No 11 ==============')
+        //What is an array and explain with an example by writing down an array of the first 10 positive integers? And access the 5th value in an array.
+        /*Collection of elements, where each element can be of any data type 
+        such as numbers, strings, objects, or even other arrays is called Array*/
+        const positiveIntegers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(positiveIntegers[4]);
+
+        console.log('============ Q No 12 ==============')
+        //How to add and remove values from an array? Explain with a code example.
+        let fruits = ['apple', 'banana', 'orange'];
+
+        fruits.push('mango'); //Addition at the end of Array
+        fruits.unshift('strawberry'); //Addition at the start of Array
+
+        console.log(fruits);
+
+        fruits.pop();//Remove from the end of Array
+        fruits.shift();//Remove from the start of Array
+
+        console.log(fruits);
+
+        fruits.splice(1, 1); // Remove one element at index 1
+        console.log(fruits);
+
+        fruits.splice(1, 0, 'grape', 'kiwi'); // Insert 'grape' and 'kiwi' at index 1
+        console.log(fruits);
+
+        console.log('============ Q No 13 ==============')
+        /*A boolean is a data type in JavaScript that represents one of two values
+        true or false. It is used to express logical conditions and make decisions 
+        in programming.*/
+        //The result of converting 0 and null to boolean in JavaScript is false.
+
+        console.log('============ Q No 14 ==============')
+        //Write a program that prints "Hello, world!" to the console.
+        console.log("Hello, world!")
+
+        console.log('============ Q No 15 ==============')
+        const test_prime = () => {
+            let n = document.getElementById("demo").value;
+            if (n === 2) {
+                return true;
+            } else {
+                for (var x = 2; x < n; x++) {
+                    if (n % x === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        console.log('============ Q No 16 ==============')
+        const isEven = () => {
+            let num = document.getElementById("demo1").value;
+            if (num % 2 === 0) {
+                alert("Number is even")
+            } else {
+                alert("Number is not even")
+            }
+        };
+
+
+        console.log('============ Q No 17 ==============')
+        const findFactorial = () => {
+            let num = document.getElementById("demo2").value;
+            let factorial = 1;
+            if (num < 0) {
+                alert("The number is less than zero there is no factorial");
+            } else {
+                for (let i = 1; i <= num; i++) {
+                    factorial *= i;
+                }
+            }
+            alert(`The factorial is ${factorial}`)
+        }
+
+        console.log('============ Q No 18 ==============')
+        const isPerfectSquare = () => {
+            let number = document.getElementById("square").value;
+            let sqrt = Math.sqrt(number);
+            alert(sqrt * sqrt === Number(number));
+        }
+
+        console.log('============ Q No 19 ==============')
+        const maxNum = ()=>{
+        let number1 = document.getElementById("num1").value;
+        let number2 = document.getElementById("num2").value;
+        alert(Math.max(number1, number2))
+        } 
+
+        console.log('============ Q No 20 ==============')
+        const printName = ()=>{
+        let yourName = prompt("Enter your name")
+        console.log(`Hello, ${yourName}!`)
+        }
+    </script>
+</body>
+
+</html>

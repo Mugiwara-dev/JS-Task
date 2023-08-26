@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzaib</title>
+</head>
+
+<body>
+    <script>
+        //Write a function that takes an array of numbers as input and returns a new array with only the even numbers from the original array.
+        let evenArray = (array) => {
+            let evenNum = [];
+            for (const i in array) {
+                if (i % 2 === 0) {
+                    evenNum.push(i)
+                }
+            }
+            return evenNum;
+        }
+        let array = [1, 2, 4, 5, 6]
+        // console.log(evenArray(array));
+
+        //Write a function that takes an array of strings as input and returns a new array with the lengths of those strings.
+        let arrayOfString = (strArray) => {
+            let lengthOfStr = [];
+            for (const i of strArray) {
+                lengthOfStr.push(i.length);
+            }
+            return lengthOfStr;
+        }
+        let strArray = ["Hello", "My", "Name", "is", "Shahzaib"];
+        // console.log(arrayOfString(strArray));
+
+        //Write a function that takes an array of numbers as input and returns the largest number in the array.
+        let largestNumInArray = (arr) => {
+            let largestNum = 0;
+            for (let i of arr) {
+                if (i > largestNum) {
+                    largestNum = i;
+                }
+            }
+            return largestNum;
+        }
+        let arr = [1, 2, 3, 4];
+        // console.log(largestNumInArray(arr));
+
+        //Write a function that takes an array of numbers as input and returns a new array with the numbers in reverse order.
+        let reverseArray = (arrayOfNum) => {
+            let newArray = arrayOfNum.reverse();
+            return newArray;
+        }
+        let arrayOfNum = [1, 2, 3, 4];
+        // console.log(reverseArray(arrayOfNum));
+
+        //Write a function that takes two arrays as input and returns a new array that contains the elements from both arrays, in alternating order.
+        let alternatingElements = (arr1, arr2) => {
+            let newArray = [];
+            const maxLength = Math.max(arr1.length, arr2.length);
+            for (let i = 0; i < maxLength; i++) {
+                if (i < arr1.length) {
+                    newArray.push(arr1[i]);
+                }
+                if (i < arr2.length) {
+                    newArray.push(arr2[i]);
+                }
+            }
+            return newArray;
+        }
+        let arr1 = [1, 3, 5, 7];
+        let arr2 = [2, 4, 6, 8];
+        // console.log(alternatingElements(arr1,arr2));
+
+        //Write a function that takes an array of strings as input and returns a new array with only the elements that start with a specific letter.
+        let startWithSpecificletter = (str, specificChar) => {
+            let newArray = [];
+            for (const i of str) {
+                if (specificChar === i[0]) {
+                    newArray.push(i);
+                }
+            }
+            return newArray;
+        }
+        let str = ["Hello", "My", "Name", "is", "Shahzaib"];
+        let specificChar = "H";
+        console.log(startWithSpecificletter(str,specificChar));
+
+        //Write a function that takes an array of numbers as input and returns the average of those numbers.
+        let aveOfArray = (arrayNum) => {
+            let sum = 0;
+            for (const i of arrayNum) {
+                sum += i;
+            }
+            let result = sum / arrayNum.length;
+            return result;
+        }
+        let arrayNum = [1, 2, 3];
+        // console.log(aveOfArray(arrayNum));
+
+        //Write a function that takes an array of numbers as input and returns a new array with the squared values of the original array.
+        let squareOfNum = (numbers) => {
+            let result = [];
+            for (const i of numbers) {
+                result.push([i] * [i]);
+            }
+            return result;
+        }
+        let num = [2, 4, 6, 8];
+        // console.log(squareOfNum(num));
+
+        //Write a function that takes a string as input and checks if it is a palindrome (reads the same forwards and backwards). Return true if it is, false otherwise.
+        let checkPalindrome = (str) => {
+            let reverseStr = str.split("").reverse().join("")
+            if (reverseStr = str) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        let palindrome = "madam"
+        // console.log(checkPalindrome(palindrome));
+
+        //Create an object representing a person with properties such as name, age, and profession. Print out the person's name and age.
+        person = {
+            name: "Shahzaib",
+            age: 20,
+            profession: "Software Engineer"
+        }
+        // console.log(person.name, person.age);
+    </script>
+</body>
+
+</html>

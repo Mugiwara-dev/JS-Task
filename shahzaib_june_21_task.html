@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <h1>Shahzaib Aslam</h1>
+<body>
+    <script>
+        //Write a program that takes two numbers as input and outputs their sum, difference, product, and quotient.
+        const sdpq = (num1, num2) => {
+            console.log(num1 + num2);
+            console.log(num1 - num2);
+            console.log(num1 * num2);
+            console.log(num1 / num2);
+        }
+        //sdpq(12,13);
+
+        //Write a program that takes a number as input and prints whether it is even or odd.
+        const evenOrOdd = (num) => {
+            if (num % 2 === 0) {
+                console.log("Number is even")
+            } else {
+                console.log("Number is odd")
+            }
+        }
+        // evenOrOdd(3);
+
+        //Write a program that takes a string as input and prints the reverse of the string.
+        const reverseString = () => {
+            let str = prompt("Enter a string:");
+            let reversedStr = str.split("").reverse().join("");
+            console.log(reversedStr);
+        }
+        // reverseString();
+
+        //Write a program that generates and prints the Fibonacci sequence up to a given number of terms.
+        function fibonacciSequence(numTerms) {
+            let num1 = 0;
+            let num2 = 1;
+            let fibonacci = [num1, num2];
+
+            for (let i = 2; i < numTerms; i++) {
+                let nextNum = num1 + num2;
+                fibonacci.push(nextNum);
+                num1 = num2;
+                num2 = nextNum;
+            }
+
+            return fibonacci;
+        }
+
+        // console.log(fibonacciSequence(10));
+
+        //Write a program that takes an array of numbers as input and outputs the largest and smallest numbers in the array.
+        const arrayNum = () => {
+            const numbers = [4, 17, 3, 8, 12, 9];
+            let smallest = numbers[0];
+            let largest = numbers[0];
+
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] < smallest) {
+                    smallest = numbers[i];
+                } else if (numbers[i] > largest) {
+                    largest = numbers[i];
+                }
+            }
+
+            console.log(`The smallest number is ${smallest}.`);
+            console.log(`The largest number is ${largest}.`);
+
+        }
+        // arrayNum();
+
+        //Write a program that prompts the user for a number and then prints all the prime numbers up to that number.
+        const isPrime = (num) => {
+            if (num < 2) {
+                return false;
+            }
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // const maxNumber = parseInt(prompt('Enter a number: '));
+        // for (let i = 2; i <= maxNumber; i++) {
+        //     if (isPrime(i)) {
+        //         console.log(i);
+        //     }
+        // }
+
+        //Write a program that takes a sentence as input and counts the number of words in the sentence.
+        const numOfWords = () => {
+
+            const str = prompt("Enter the sentence")
+            const wordCount = str.split(' ').filter(word => word !== '');
+            console.log(`The number of words in sentence is ${wordCount.length}`);
+        }
+        // numOfWords();
+
+        //Write a program that takes an array of numbers as input and returns a new array with only the positive numbers from the original array.
+        const positiveNum = (numbers) => {
+            const result = [];
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] > 0) {
+                    result.push(numbers[i]);
+                }
+            }
+            return result;
+        }
+        const numbers = [1, -1, 3, 12, -2];
+        // console.log(positiveNum(numbers));
+
+        //Write a function that takes two numbers as parameters and returns their sum.
+        const sumOfTwo = (num1, num2) => {
+            return num1 + num2;
+        }
+        // console.log(`The sum of two number is ${sumOfTwo(2,5)}`);
+
+        //Using a for in loop, calculate the total number of properties in an object.
+        const totalNumOfPro = () => {
+            const myObject = {
+                name: 'Shahzaib',
+                age: 20,
+                hobby: 'Anime watching'
+            };
+
+            let count = 0;
+
+            for (let key in myObject) {
+                count++;
+            }
+
+            console.log(`Total number of properties: ${count}`);
+        }
+        // totalNumOfPro();
+
+        //Using a for in loop, print all the properties of an object that have a string value.
+        const objectValue = () => {
+            const myObject = {
+                name: 'Shahzaib',
+                age: 20,
+                hobby: 'Anime watching'
+            };
+
+            let count = 0;
+
+            for (let key in myObject) {
+                if (typeof myObject[key] === "string") {
+                    console.log(myObject[key]);
+                }
+            }
+        }
+        // objectValue();
+    
+        //Using a combination of for loop and for of loop, iterate over an array of objects and print a specific property of each object.
+        const loopsIteration = ()=>{
+            const persons = [
+            { name: 'Zohaib', age: 18 },
+            { name: 'Shahzaib', age: 20 },
+            { name: 'Aslam', age: 50 }
+        ];
+        for (let i = 0; i < persons.length; i++) {
+            const person = persons[i];
+            for (let [key, value] of Object.entries(person)) {
+                if (key === 'name') {
+                    console.log(value);
+                }
+            }
+        }
+        }
+        // loopsIteration();
+
+        //Write a function that takes an array of numbers as a parameter and returns the largest number in the array.
+        const largestNum = (arr) => {
+            let largest = arr[0];
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > largest) {
+                    largest = arr[i];
+                }
+            }
+            return largest;
+
+        }
+        const array = [4, 17, 3, 8, 12, 9];
+        // console.log(largestNum(array));
+
+        //Write a function that takes a string as a parameter and returns the reversed version of the string.
+        const reverseStr = (str) => {
+            let reversedStr = str.split("").reverse().join("");
+            return reversedStr;
+        }
+        let str = "Yo! man whatsup"
+        // console.log(reverseStr(str));
+
+        //Write a function that takes an array of strings as a parameter and returns a new array with the lengths of those strings.
+
+        const string_lengths = (arr) => {
+            output = []
+            for (let string of arr) {
+                output.push(string.length)
+            }
+            return output
+        }
+        // console.log(string_lengths(["abc", "wxyz"]))
+    </script>
+</body>
+
+</html>
